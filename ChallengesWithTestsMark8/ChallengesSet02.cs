@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -7,27 +8,52 @@ namespace ChallengesWithTestsMark8
     {
         public bool CharacterIsALetter(char c)
         {
-            throw new NotImplementedException();
+            if (c is char) { 
+                return true;
+            } else { return false; }
         }
-
         public bool CountOfElementsIsEven(string[] vals)
         {
-            throw new NotImplementedException();
+            var count = 0;
+            foreach (var i in vals) {
+                count++;
+            }
+            if (count % 2 == 0) {
+                return true;
+            } else return false;
         }
 
         public bool IsNumberEven(int number)
         {
-            throw new NotImplementedException();
+            if (number % 2 == 0)
+            {
+                return true;
+            }
+            else return false;
         }
 
         public bool IsNumberOdd(int num)
         {
-            throw new NotImplementedException();
+            if (num % 2 == 0)
+            {
+                return false;
+            }
+            else return true;
         }
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null) {
+                return 0;
+            }
+
+            else if (numbers.Count() == 0) {
+                return 0;
+            }
+
+            else return numbers.Min() + numbers.Max();
+
+            
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
