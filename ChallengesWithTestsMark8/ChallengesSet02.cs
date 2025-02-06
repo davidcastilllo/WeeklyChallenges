@@ -8,10 +8,9 @@ namespace ChallengesWithTestsMark8
     {
         public bool CharacterIsALetter(char c)
         {
-            if (c is char) { 
-                return true;
-            } else { return false; }
+            return Char.IsLetter(c);
         }
+
         public bool CountOfElementsIsEven(string[] vals)
         {
             var count = 0;
@@ -58,27 +57,55 @@ namespace ChallengesWithTestsMark8
 
         public int GetLengthOfShortestString(string str1, string str2)
         {
-            throw new NotImplementedException();
+            if (str1.Length <= str2.Length) { return str1.Length; } else { return str2.Length; } 
         }
 
         public int Sum(int[] numbers)
         {
-            throw new NotImplementedException();
+            int sum = 0;
+            if (numbers == null) { return 0; }
+            foreach (var i in numbers) {
+               sum += i; 
+            }
+
+            return sum;
         }
 
         public int SumEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            int sum = 0;
+            if (numbers == null) { return 0; }
+            foreach (var i in numbers)
+            {
+                if (i % 2 == 0) { 
+                sum += i;
+                } 
+            }
+
+            return sum;
         }
 
         public bool IsSumOdd(List<int> numbers)
         {
-            throw new NotImplementedException();
+            int sum = 0;
+            if (numbers == null) { return false; }
+            foreach (var i in numbers)
+            {
+                    sum += i;
+            }
+
+            if (sum % 2 == 0) { return false; } else { return true; }
+            
         }
 
-        public long CountOfPositiveOddsBelowNumber(long number)
+        public long CountOfPositiveOddsBelowNumber(int number)
         {
-            throw new NotImplementedException();
+            if (number <= 0)
+            {
+                return 0;
+            }
+            
+            return (number / 2);
         }
     }
 }
